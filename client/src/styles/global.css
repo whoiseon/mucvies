@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #F5F5F5;
+    text-align: center;
+}
+
+.main {
+    margin-top: 20px;
+}
