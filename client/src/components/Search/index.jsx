@@ -1,9 +1,12 @@
 import {useCallback, useState} from "react";
 import axios from "axios";
+import {useRecoilState} from "recoil";
+import {movieState} from "../../states/movieState";
+import {searchKeywordState} from "../../states/searchKeywordState";
 
 const Search = () => {
-  const [movies, setMovies] = useState([]);
-  const [value, setValue] = useState('');
+  const [movies, setMovies] = useRecoilState(movieState);
+  const [value, setValue] = useRecoilState(searchKeywordState);
 
   const onChangeValue = useCallback((e) => {
     setValue(e.target.value);
