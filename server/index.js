@@ -30,7 +30,8 @@ app.get('/api/search', (req, res) => {
     {
       params: {
         query: searchKeyword,
-        display: 100 // 검색 결과 노출 개수
+        display: 10, // 검색 결과 노출 개수
+        genre: '',
       },
       headers: {
         'X-Naver-Client-Id': CLIENT_ID,

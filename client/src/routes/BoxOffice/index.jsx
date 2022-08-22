@@ -1,12 +1,11 @@
-import Search from "../Search";
 import AppLayout from "../../components/AppLayout";
 
-const Home = () => {
+const BoxOffice = () => {
   return (
     <AppLayout>
-      홈
+      박스오피스
     </AppLayout>
   );
 };
 
-export default Home;
+export default BoxOffice;
