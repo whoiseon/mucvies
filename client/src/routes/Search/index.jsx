@@ -1,15 +1,14 @@
 import {useRecoilState, useRecoilValue} from "recoil";
 import {movieState} from "../../states/movieState";
 import AppLayout from "../../components/AppLayout";
-import {InputWrapper, SearchResult, SearchResultWrapper, SearchWrapper} from "./styles";
+import {InputWrapper, ResultMovieCard, SearchResult, SearchResultWrapper, SearchWrapper} from "./styles";
 import SearchForm from "../../components/SearchForm";
 import {searchKeywordState} from "../../states/searchKeywordState";
+import MovieCard from "../../components/MovieCard";
 
 const Search = () => {
   const [movies, setMovies] = useRecoilState(movieState);
   const searchKeyword = useRecoilValue(searchKeywordState);
-
-  console.log(movies);
 
   return (
     <AppLayout>
@@ -22,17 +21,17 @@ const Search = () => {
               : (
                 <SearchResultWrapper>
                   <p>
-                    {`"${searchKeyword}"의 검색 결과입니다.`}
+                    {`"${searchKeyword}"에 대한 검색 결과입니다.`}
                   </p>
-                  {
-                    movies?.map((item, idx) => {
-                      return (
-                        <div key={item.title}>
-                          <img src={item.image} alt="movie_img" />
-                        </div>
-                      );
-                    })
-                  }
+                  <ResultMovieCard>
+                    {
+                      movies?.map((item, idx) => {
+                        return (
+                          <MovieCard key={item.title} item={item} />
+                        );
+                      })
+                    }
+                  </ResultMovieCard>
                 </SearchResultWrapper>
               )
           }

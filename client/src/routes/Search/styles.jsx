@@ -1,20 +1,21 @@
 import styled from "@emotion/styled";
-import {INPUT_COLOR, WHITE_COLOR} from "../../styles/common";
+import {BUTTON_HOVER, INPUT_COLOR, WHITE_COLOR} from "../../styles/common";
 
 export const SearchWrapper = styled.div`
   display: flex;
 `;
 
 export const SearchFormWrapper = styled.form`
-  width: 300px;
+  min-width: 300px;
   margin-right: 30px;
-  p {
-    font-size: 22px;
-    font-weight: bold;
-    opacity: 0.5;
-    padding-top: 6px;
-    margin-bottom: 70px;
-  }
+`;
+
+export const Header = styled.p`
+  font-size: 22px;
+  font-weight: bold;
+  opacity: 0.5;
+  padding-top: 6px;
+  margin-bottom: 70px;
 `;
 
 export const InputWrapper = styled.div`
@@ -37,6 +38,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const SearchResult = styled.div`
+  width: 100%;
   p {
     font-size: 22px;
     font-weight: bold;
@@ -46,5 +48,15 @@ export const SearchResult = styled.div`
 `;
 
 export const SearchResultWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ResultMovieCard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const SearchOptionWrapper = styled.div`
 
 `;

@@ -25,13 +25,16 @@ const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
 app.get('/api/search', (req, res) => {
   // 클라이언트에서 보낸 검색어
   const searchKeyword = req.query.query;
+  const searchGenre = req.query.genre;
+  const searchCountry = req.query.country;
 
   axios.get('https://openapi.naver.com/v1/search/movie.json',
     {
       params: {
+        display: 15, // 검색 결과 노출 개수
         query: searchKeyword,
-        display: 10, // 검색 결과 노출 개수
-        genre: '',
+        genre: searchGenre || '',
+        country: searchCountry || '',
       },
       headers: {
         'X-Naver-Client-Id': CLIENT_ID,

@@ -13,7 +13,7 @@ export const Background = styled.div`
 `;
 
 export const LeftMenu = styled.div`
-  width: 200px;
+  min-width: 200px;
   margin-right: 30px;
   h1 {
     font-size: 28px;
@@ -40,6 +40,9 @@ export const LeftMenu = styled.div`
           background-color: ${BUTTON_HOVER};
           opacity: 1;
         }
+        &:active {
+          background-color: #404040;
+        }
       }
     }
   }
@@ -49,6 +52,7 @@ export const ResultArea = styled.div`
   @media (max-width: 700px) {
     padding: 0 20px;
   }
+  width: 100%;
 `;
 
 // Mobile Components
