@@ -58,12 +58,15 @@ export const ResultArea = styled.div`
 // Mobile Components
 
 export const MobileTopBar = styled.div`
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
+  background-color: ${BACKGROUND_COLOR};
   width: 100%;
   height: 60px;
   margin-bottom: 20px;
+  z-index: 999;
 `;
 
 export const MobileLogo = styled.div`

@@ -37,6 +37,9 @@ export const SelectWrapper = styled.div`
   button {
     text-align: left;
     width: 50%;
-    padding: 10px 20px;
+    padding: 14px 20px;
+  }
+  @media (max-width: 700px) {
+    max-width: 100%;
   }
 `;

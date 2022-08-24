@@ -1,6 +1,5 @@
 import {memo, useState, useCallback} from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import axios from "axios";
 import {useRecoilState, useRecoilValue} from "recoil";
 import {Header, InputWrapper, SearchFormWrapper, SearchOptionWrapper} from "../../routes/Search/styles";
@@ -16,11 +15,14 @@ const SearchForm = ({ setMovies }) => {
   const [genre, setGenre] = useRecoilState(genreState);
   const [country, setCountry] = useRecoilState(countryState);
 
+  const [focus, setFocus] = useState(false);
+
   const onSubmitSearch = useCallback((e) => {
     e.preventDefault();
   }, []);
 
   const onChangeValue = useCallback(async (e) => {
+    setFocus(true);
     setValue(e.target.value);
     try {
       const { data } = await axios.get('/api/search', {
@@ -41,7 +43,7 @@ const SearchForm = ({ setMovies }) => {
       <Header>
         영화 검색
       </Header>
-      <InputWrapper>
+      <InputWrapper focus={focus}>
         <input
           type="text"
           onChange={onChangeValue}

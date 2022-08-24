@@ -3,12 +3,20 @@ import MovieIcon from '@mui/icons-material/Movie';
 import PageviewIcon from '@mui/icons-material/Pageview';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useMediaQuery} from "react-responsive";
+import {useCallback, useState} from "react";
 import {Background, LeftMenu, MenuBottomLine, MenuBtn, MobileLogo, MobileTopBar, ResultArea} from "./styles";
+import MobileMenu from "../MobileMenu";
 
 const AppLayout = ({ children }) => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   const isMobile = useMediaQuery({
     query: "(max-width: 700px)",
   });
+
+  const onClickShowMobileMenu = useCallback(() => {
+    setShowMobileMenu((prev) => !prev);
+  }, []);
 
   return (
     <Background>
@@ -17,12 +25,13 @@ const AppLayout = ({ children }) => {
           ? (
             <MobileTopBar>
               <MobileLogo>
-                <h1>Mucvies</h1>
+                <Link to="/">
+                  <h1>Mucvies</h1>
+                </Link>
               </MobileLogo>
-              <MenuBtn>
+              <MenuBtn onClick={onClickShowMobileMenu}>
                 <MenuIcon />
               </MenuBtn>
-              <MenuBottomLine />
             </MobileTopBar>
           )
           : (
@@ -50,6 +59,7 @@ const AppLayout = ({ children }) => {
       <ResultArea>
         {children}
       </ResultArea>
+      { showMobileMenu && <MobileMenu setShowMobileMenu={setShowMobileMenu} /> }
     </Background>
   );
 };
