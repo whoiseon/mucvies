@@ -1,4 +1,4 @@
-import {memo, useState, useCallback} from "react";
+import {memo, useState, useCallback, useEffect} from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 import {useRecoilState, useRecoilValue} from "recoil";
@@ -17,17 +17,12 @@ const SearchForm = ({ setMovies }) => {
 
   const [focus, setFocus] = useState(false);
 
-  const onSubmitSearch = useCallback((e) => {
+  const onSubmitSearch = useCallback(async (e) => {
     e.preventDefault();
-  }, []);
-
-  const onChangeValue = useCallback(async (e) => {
-    setFocus(true);
-    setValue(e.target.value);
     try {
       const { data } = await axios.get('/api/search', {
         params: {
-          query: e.target.value,
+          query: value,
           genre,
           country,
         },
@@ -36,7 +31,12 @@ const SearchForm = ({ setMovies }) => {
     } catch (error) {
       console.error(error);
     }
-  }, [value]);
+  }, [value, genre, country]);
+
+  const onChangeValue = useCallback(async (e) => {
+    setFocus(true);
+    setValue(e.target.value);
+  }, []);
 
   return (
     <SearchFormWrapper onSubmit={onSubmitSearch}>

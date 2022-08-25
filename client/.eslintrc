@@ -43,6 +43,7 @@
     "no-undef": "off",
     "no-nested-ternary": "off",
     "react/no-array-index-key": "off",
-    "react/no-danger": "off"
+    "react/no-danger": "off",
+    "react/jsx-boolean-value": "off"
   }
 }

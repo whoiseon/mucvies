@@ -6,23 +6,40 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 70px;
-  @media (max-width: 580px) {
-    width: 260px;
+  @media (min-width: 1570px) {
+    width: 180px;
+    &:not(:nth-of-type(5n)) {
+      margin-right: 20px;
+    }
   }
-  @media (max-width: 560px) {
-    width: 250px;
+  @media (min-width: 1370px) {
+    &:not(:nth-of-type(4n)) {
+      margin-right: 20px;
+    }
   }
-  @media (max-width: 560px) {
-    width: 240px;
+  @media (min-width: 1170px) {
+    &:not(:nth-of-type(3n)) {
+      margin-right: 20px;
+    }
   }
-  @media (max-width: 520px) {
-    width: 230px;
+  @media (min-width: 970px) {
+    &:not(:nth-of-type(2n)) {
+      margin-right: 20px;
+    }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 640px) {
     width: 220px;
   }
-  @media (max-width: 390px) {
-    width: 164px;
+  @media (min-width: 620px) {
+    width: 180px;
+    &:not(:nth-of-type(3n)) {
+      margin-right: 20px;
+    }
+  }
+  @media (min-width: 500px) {
+    &:not(:nth-of-type(2n)) {
+      margin-right: 20px;
+    }
   }
 `;
 
@@ -33,11 +50,8 @@ export const MovieImg = styled.div`
     height: 260px;
     border-radius: 14px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    @media (max-width: 580px) {
+    @media (max-width: 640px) {
       height: 320px;
-    }
-    @media (max-width: 390px) {
-      height: 260px;
     }
   }
 `;

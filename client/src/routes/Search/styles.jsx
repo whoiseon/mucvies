@@ -51,6 +51,7 @@ export const InputWrapper = styled.div`
 
 export const SearchResult = styled.div`
   width: 100%;
+  margin-right: 30px;
   p {
     font-size: 22px;
     font-weight: bold;
@@ -75,7 +76,6 @@ export const SearchResultWrapper = styled.div`
 export const ResultMovieCard = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   width: 100%;
 `;
 
