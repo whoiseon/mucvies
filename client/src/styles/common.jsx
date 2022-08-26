@@ -5,3 +5,5 @@ export const WHITE_COLOR = '#F5F5F5';
 export const INPUT_COLOR = '#202020';
 export const BUTTON_HOVER = '#303030';
 export const BLUE_COLOR = '#0078F2';
+export const BLUE_HOVER = '#2186ED';
+export const RED_COLOR = '#EB4C4C';

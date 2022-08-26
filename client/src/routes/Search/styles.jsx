@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {BUTTON_HOVER, INPUT_COLOR, WHITE_COLOR} from "../../styles/common";
+import {BLUE_COLOR, BLUE_HOVER, BUTTON_HOVER, INPUT_COLOR, WHITE_COLOR} from "../../styles/common";
 
 export const SearchWrapper = styled.div`
   display: flex;
@@ -81,4 +81,30 @@ export const ResultMovieCard = styled.div`
 
 export const SearchOptionWrapper = styled.div`
 
+`;
+
+export const SearchButtonWrapper = styled.div`
+  button {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 14px;
+    font-weight: bold;
+    margin-top: 40px;
+    background-color: ${BLUE_COLOR};
+    transition: background-color 0.16s ease-in;
+    &:hover {
+      background-color: ${BLUE_HOVER};
+    }
+    &:active {
+      background-color: #006DDD;
+    }
+  }
+`;
+
+export const SkeletonWrapper = styled.div`
+  span {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
 `;
