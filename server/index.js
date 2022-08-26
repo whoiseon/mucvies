@@ -3,6 +3,10 @@ const app = express();
 const port = process.env.PORT || 3065;
 require("dotenv").config();
 const cors = require("cors");
+
+// parsing
+const parsing = require('./fetching.js');
+
 // axios
 const axios = require("axios");
 
@@ -12,7 +16,7 @@ app.use(express.urlencoded( {extended : true } ));
 
 // CORS 허용
 let corsOptions = {
-  origin: ['http://localhost:3000', 'https://openapi.naver.com'],
+  origin: ['http://localhost:3000', 'https://openapi.naver.com', 'https://movie.daum.net'],
   credentials: true
 }
 app.use(cors(corsOptions));
@@ -50,6 +54,13 @@ app.get('/api/search', (req, res) => {
     console.log(message);
   })
 });
+
+app.get('/api/boxoffice', (req, res) => {
+  parsing()
+    .then((response) => {
+      res.json(response);
+    });
+})
 
 // Server
 app.listen(port, () => {

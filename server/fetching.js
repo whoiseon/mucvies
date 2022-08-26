@@ -22,6 +22,7 @@ const parsing = async () => {
     const image = $(node).find('.poster_movie img').attr('src');
     const title = $(node).find('.thumb_cont strong a').text();
     const attendance = $(node).find('.txt_info .info_txt:nth-child(2)').text();
+    const rank = $(node).find('.poster_movie .rank_num').text();
 
     if (title === "") {
       return;
@@ -31,10 +32,11 @@ const parsing = async () => {
       image,
       title,
       attendance,
+      rank,
     });
   });
 
-  console.log(parsingData);
+  return parsingData;
 }
 
-parsing();
+module.exports = parsing;
