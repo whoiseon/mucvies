@@ -2,12 +2,13 @@ import {useRecoilState} from "recoil";
 import {useCallback, useEffect, useState} from "react";
 import axios from "axios";
 import AppLayout from "../../components/AppLayout";
-import {BoxOfficeWrapper, Header} from "./styles";
+import {BoxOfficeMovieCard, BoxOfficeWrapper, Header} from "./styles";
 import {boxofficeState} from "../../states/boxofficeState";
+import BoxOfficeCard from "../../components/BoxOfficeCard";
 
 const BoxOffice = () => {
   const [boxoffice, setBoxoffice] = useRecoilState(boxofficeState);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchBoxOffice = useCallback(async () => {
     setIsLoading(true);
@@ -36,11 +37,15 @@ const BoxOffice = () => {
           isLoading
             ? <div>로딩중</div>
             : (
-              boxoffice.map((data, i) => {
-                return (
-                  <img src={data.image} alt="boxoffice_image" />
-                );
-              })
+              <BoxOfficeMovieCard>
+                {
+                  boxoffice.map((data, i) => {
+                    return (
+                      <BoxOfficeCard key={data.title} data={data} />
+                    );
+                  })
+                }
+              </BoxOfficeMovieCard>
             )
         }
       </BoxOfficeWrapper>

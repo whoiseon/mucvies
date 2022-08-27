@@ -9,5 +9,13 @@ export const Header = styled.p`
 `;
 
 export const BoxOfficeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
 
+export const BoxOfficeMovieCard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 `;
