@@ -2,44 +2,25 @@ import styled from "@emotion/styled";
 import {BLUE_COLOR} from "../../styles/common";
 
 export const CardWrapper = styled.div`
-  width: 180px;
+  width: 20%;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   margin-bottom: 70px;
-  @media (min-width: 1570px) {
-    width: 180px;
-    &:not(:nth-of-type(5n)) {
-      margin-right: 20px;
-    }
+  @media (max-width: 1400px) {
+    width: 25%;
   }
-  @media (min-width: 1370px) {
-    &:not(:nth-of-type(4n)) {
-      margin-right: 20px;
-    }
+  @media (max-width: 1180px) {
+    width: 33%;
   }
-  @media (min-width: 1170px) {
-    &:not(:nth-of-type(3n)) {
-      margin-right: 20px;
-    }
+  @media (max-width: 1024px) {
+    width: 50%;
   }
-  @media (min-width: 970px) {
-    &:not(:nth-of-type(2n)) {
-      margin-right: 20px;
-    }
+  @media (max-width: 700px) {
+    width: 33%;
   }
-  @media (max-width: 640px) {
-    width: 220px;
-  }
-  @media (min-width: 620px) {
-    width: 180px;
-    &:not(:nth-of-type(3n)) {
-      margin-right: 20px;
-    }
-  }
-  @media (min-width: 500px) {
-    &:not(:nth-of-type(2n)) {
-      margin-right: 20px;
-    }
+  @media (max-width: 570px) {
+    width: 50%;
   }
 `;
 

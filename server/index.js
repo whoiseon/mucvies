@@ -56,7 +56,9 @@ app.get('/api/search', (req, res) => {
 });
 
 app.get('/api/boxoffice', (req, res) => {
-  parsing()
+  const period = req.query.period;
+
+  parsing(period)
     .then((response) => {
       res.json(response);
     });

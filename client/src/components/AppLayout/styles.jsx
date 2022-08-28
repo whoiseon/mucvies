@@ -6,6 +6,7 @@ export const Background = styled.div`
     flex-direction: column;
     padding-top: 0;
   }
+  width: 100%;
   display: flex;
   max-width: 1600px;
   margin: 0 auto;

@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/boxoffice" element={<BoxOffice />} />
+        <Route path="/boxoffice/:period" element={<BoxOffice />} />
       </Routes>
     </div>
   );

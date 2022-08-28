@@ -46,7 +46,7 @@ const Search = () => {
                     <SkeletonWrapper>
                       <Stack spacing={1}>
                         <p>
-                          <Skeleton variant="rounded" width={300} height={32} />
+                          <Skeleton variant="rounded" width={300} height={24} />
                         </p>
                         <ResultMovieCard style={{ marginTop: '0' }}>
                           {
@@ -54,14 +54,14 @@ const Search = () => {
                               return (
                                 <CardWrapper key={v}>
                                   <MovieImg>
-                                    <Skeleton variant="rounded" width={180} height={260} />
+                                    <Skeleton variant="rounded" width="100%" height={260} />
                                   </MovieImg>
                                   <MovieInfo>
                                     <p>
                                       <Skeleton variant="rounded" width={100} height={14} />
                                     </p>
                                     <p>
-                                      <Skeleton variant="rounded" width={180} height={16} />
+                                      <Skeleton variant="rounded" width="100%" height={16} />
                                     </p>
                                   </MovieInfo>
                                 </CardWrapper>

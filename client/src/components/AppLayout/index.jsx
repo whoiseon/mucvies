@@ -47,7 +47,7 @@ const AppLayout = ({ children }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/boxoffice">
+                  <Link to="/boxoffice/weekly">
                     <MovieIcon />
                     박스오피스
                   </Link>

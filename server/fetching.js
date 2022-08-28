@@ -1,17 +1,16 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
-const urlencode = require('urlencode');
 
-const getHTML = async () => {
+const getHTML = async (period) => {
   try {
-    return await axios.get('https://movie.daum.net/ranking/boxoffice/weekly');
+    return await axios.get(`https://movie.daum.net/ranking/boxoffice/${period}`);
   } catch (error) {
     console.error(error);
   }
 }
 
-const parsing = async () => {
-  const html = await getHTML();
+const parsing = async (period) => {
+  const html = await getHTML(period);
   const $ = cheerio.load(html.data);
 
   const boxoffice = $('.box_boxoffice > ol > li');

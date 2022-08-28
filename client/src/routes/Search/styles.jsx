@@ -13,7 +13,7 @@ export const SearchFormWrapper = styled.form`
   margin-right: 30px;
   @media (max-width: 700px) {
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -71,6 +71,9 @@ export const SearchResultWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  p {
+    margin-bottom: 40px;
+  }
 `;
 
 export const ResultMovieCard = styled.div`
