@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3065;
+const path = require("path");
 require("dotenv").config();
 const cors = require("cors");
 
@@ -24,6 +25,14 @@ app.use(cors(corsOptions));
 // 네이버 API 정보 (환경변수 사용)
 const CLIENT_ID = process.env.NAVER_CLIENT_ID;
 const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static('client/build'));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+  });
+}
 
 // API 데이터 가져오기
 app.get('/api/search', (req, res) => {
