@@ -1,0 +1,12 @@
+# Root
+.idea/
+.DS_STORE/
+
+# Client
+client/node_modules
+client/src/setupProxy.js
+
+#Server
+node_modules/
+.env
+.gitIgnore
