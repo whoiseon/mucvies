@@ -26,8 +26,6 @@ const Search = () => {
 
   const fakeArrayToSkeleton = Array.from({ length: 15 }, (v, i) => i);
 
-  console.log(movies);
-
   return (
     <AppLayout>
       <SearchWrapper>

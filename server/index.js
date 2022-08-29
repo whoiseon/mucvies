@@ -12,7 +12,7 @@ const parsing = require('./fetching.js');
 const axios = require("axios");
 
 // deploy mode
-const isMode = 'production';
+const isMode = 'development';
 
 // body-parser
 app.use(express.json());
@@ -20,7 +20,12 @@ app.use(express.urlencoded( {extended : true } ));
 
 // CORS 허용
 let corsOptions = {
-  origin: ['http://localhost:3000', 'https://openapi.naver.com', 'https://movie.daum.net'],
+  origin: [
+    'http://localhost:3000',
+    'https://openapi.naver.com',
+    'https://movie.daum.net',
+    'https://mucvies.herokuapp.com'
+  ],
   credentials: true
 }
 app.use(cors(corsOptions));
@@ -29,7 +34,7 @@ app.use(cors(corsOptions));
 const CLIENT_ID = process.env.NAVER_CLIENT_ID;
 const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
 
-if (process.env.NODE_ENV === "production" || isMode === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static('client/build'));
 
   app.get("*", (req, res) => {

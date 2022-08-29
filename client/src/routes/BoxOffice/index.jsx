@@ -104,7 +104,7 @@ const BoxOffice = () => {
             : (
               <BoxOfficeMovieCard>
                 {
-                  boxoffice.map((data, i) => {
+                  boxoffice?.map((data, i) => {
                     return (
                       <BoxOfficeCard key={data.title} data={data} />
                     );
