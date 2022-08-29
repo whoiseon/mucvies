@@ -29,7 +29,7 @@ app.use(cors(corsOptions));
 const CLIENT_ID = process.env.NAVER_CLIENT_ID;
 const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
 
-if (isMode === "production") {
+if (process.env.NODE_ENV === "production" || isMode === "production") {
   app.use(express.static('client/build'));
 
   app.get("*", (req, res) => {
