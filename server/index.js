@@ -11,6 +11,9 @@ const parsing = require('./fetching.js');
 // axios
 const axios = require("axios");
 
+// deploy mode
+const isMode = 'production';
+
 // body-parser
 app.use(express.json());
 app.use(express.urlencoded( {extended : true } ));
@@ -26,7 +29,7 @@ app.use(cors(corsOptions));
 const CLIENT_ID = process.env.NAVER_CLIENT_ID;
 const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
 
-if (process.env.NODE_ENV === "production") {
+if (isMode === "production") {
   app.use(express.static('client/build'));
 
   app.get("*", (req, res) => {
