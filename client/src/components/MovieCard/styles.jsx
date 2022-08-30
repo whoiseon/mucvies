@@ -30,6 +30,7 @@ export const MovieImg = styled.div`
     width: 100%;
     height: 260px;
     border-radius: 14px;
+    object-fit: cover;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     @media (max-width: 640px) {
       height: 320px;

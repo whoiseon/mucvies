@@ -6,7 +6,8 @@ require("dotenv").config();
 const cors = require("cors");
 
 // parsing
-const parsing = require('./fetching.js');
+const boxoffice = require('./boxoffice.js');
+const ranking = require('./ranking');
 
 // axios
 const axios = require("axios");
@@ -75,11 +76,18 @@ app.get('/api/search', (req, res) => {
 app.get('/api/boxoffice', (req, res) => {
   const period = req.query.period;
 
-  parsing(period)
+  boxoffice(period)
     .then((response) => {
       res.json(response);
     });
 })
+
+app.get('/api/ranking', (req, res) => {
+  ranking()
+    .then((response) => {
+      res.json(response);
+    })
+});
 
 // Server
 app.listen(port, () => {

@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import MovieIcon from '@mui/icons-material/Movie';
 import PageviewIcon from '@mui/icons-material/Pageview';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useMediaQuery} from "react-responsive";
 import {useCallback, useState} from "react";
@@ -44,6 +45,12 @@ const AppLayout = ({ children }) => {
                   <Link to="/search">
                     <PageviewIcon />
                     영화 검색
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/ranking">
+                    <EmojiEventsIcon />
+                    예매 순위
                   </Link>
                 </li>
                 <li>
