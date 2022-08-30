@@ -82,8 +82,7 @@ export const MovieExplain = styled.div`
     overflow: hidden;
     line-height: 16px;
     text-overflow: ellipsis;
-    max-height: 120px;
-    text-overflow: ellipsis;
+    max-height: 100px;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
   }
