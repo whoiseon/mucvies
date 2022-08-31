@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import {keyframes} from "@emotion/css";
-import {BACKGROUND_COLOR, BLUE_COLOR, BUTTON_HOVER, RED_COLOR} from "../../styles/common";
+import {BACKGROUND_COLOR, BLUE_COLOR, BUTTON_HOVER, GRAY_COLOR, RED_COLOR, WHITE_COLOR} from "../../styles/common";
 
 export const CardWrapper = styled.div`
   width: 20%;
@@ -44,17 +44,27 @@ export const MovieInfo = styled.div`
   p {
     margin: 0;
     text-align: left;
+    i {
+      font-style: normal;
+      color: ${WHITE_COLOR};
+      opacity: 0.7;
+    }
   }
   p:nth-of-type(1) {
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: normal;
-    opacity: 0.5;
   }
   p:nth-of-type(2) {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 0;
+  }
+  p:nth-of-type(3) {
+    font-weight: normal;
+    font-size: 14px;
+    margin-top: 10px;
+    color: ${GRAY_COLOR};
   }
 `;
 

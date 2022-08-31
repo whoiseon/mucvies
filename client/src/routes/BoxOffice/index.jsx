@@ -83,7 +83,7 @@ const BoxOffice = () => {
                       return (
                         <CardWrapper key={v}>
                           <MovieImg>
-                            <Skeleton variant="rounded" width="100%" height={340} />
+                            <Skeleton variant="rounded" width="100%" height={300} />
                           </MovieImg>
                           <MovieInfo>
                             <p>
