@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import CloseIcon from '@mui/icons-material/Close';
 import PageviewIcon from '@mui/icons-material/Pageview';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MovieIcon from '@mui/icons-material/Movie';
 import {Background, CloseBtn, MenuHeader, MenuWrapper} from "./styles";
 
@@ -49,7 +50,13 @@ const MobileMenu = ({ setShowMobileMenu }) => {
           <li>
             <Link to="/search">
               <PageviewIcon />
-              영화검색
+              영화 검색
+            </Link>
+          </li>
+          <li>
+            <Link to="/ranking">
+              <EmojiEventsIcon />
+              예매 순위
             </Link>
           </li>
           <li>

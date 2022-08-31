@@ -35,14 +35,6 @@ app.use(cors(corsOptions));
 const CLIENT_ID = process.env.NAVER_CLIENT_ID;
 const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
 
-if (process.env.NODE_ENV === "production" || isMode === 'development') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-
-  app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-  });
-}
-
 // API 데이터 가져오기
 app.get('/api/search', (req, res) => {
   // 클라이언트에서 보낸 검색어
@@ -88,6 +80,14 @@ app.get('/api/ranking', (req, res) => {
       res.json(response);
     })
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
+}
 
 // Server
 app.listen(port, () => {

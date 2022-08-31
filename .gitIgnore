@@ -1,0 +1,10 @@
+# Root
+.idea/
+.DS_STORE/
+
+# Client
+client/node_modules
+
+
+#Server
+node_modules/
