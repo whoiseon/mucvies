@@ -4,7 +4,10 @@
 
 # Client
 client/node_modules
-
+client/src/setupProxy.js
+client/build
 
 #Server
 node_modules/
+.env
+.gitIgnore
