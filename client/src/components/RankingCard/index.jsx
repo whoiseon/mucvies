@@ -1,6 +1,7 @@
 import {useCallback, useState} from "react";
 import BlockIcon from "@mui/icons-material/Block";
 import {CardWrapper, MovieExplain, MovieImg, MovieInfo, NoThumbnail, RankWrapper} from "../BoxOfficeCard/styles";
+import { GRAY_COLOR } from "../../styles/common";
 
 const RankingCard = ({ data }) => {
   const [showMovieInfo, setShowMovieInfo] = useState(false);
@@ -50,7 +51,7 @@ const RankingCard = ({ data }) => {
       <MovieInfo>
         <p>평점 <i>{data.grade}</i> 예매율 <i>{data.num}</i></p>
         <p>{ data.title }</p>
-        <p>개봉일 {data.release}</p>
+        <p style={{ fontSize: '14px', color: GRAY_COLOR, marginTop: '10px' }}>개봉일 {data.release}</p>
       </MovieInfo>
     </CardWrapper>
   );

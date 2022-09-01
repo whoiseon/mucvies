@@ -51,20 +51,15 @@ export const MovieInfo = styled.div`
     }
   }
   p:nth-of-type(1) {
-    margin-bottom: 10px;
-    font-size: 14px;
     font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: ${GRAY_COLOR};
   }
   p:nth-of-type(2) {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 0;
-  }
-  p:nth-of-type(3) {
-    font-weight: normal;
-    font-size: 14px;
-    margin-top: 10px;
-    color: ${GRAY_COLOR};
   }
 `;
 

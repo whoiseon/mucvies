@@ -8,6 +8,7 @@ const cors = require("cors");
 // parsing
 const boxoffice = require('./boxoffice.js');
 const ranking = require('./ranking');
+const ott = require('./ott');
 
 // axios
 const axios = require("axios");
@@ -76,6 +77,13 @@ app.get('/api/boxoffice', (req, res) => {
 
 app.get('/api/ranking', (req, res) => {
   ranking()
+    .then((response) => {
+      res.json(response);
+    })
+});
+
+app.get('/api/ott', (req, res) => {
+  ott()
     .then((response) => {
       res.json(response);
     })

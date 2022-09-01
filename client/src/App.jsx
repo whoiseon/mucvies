@@ -3,6 +3,7 @@ import Home from "./routes/Home";
 import Search from "./routes/Search";
 import BoxOffice from "./routes/BoxOffice";
 import Ranking from "./routes/Ranking";
+import OTT from "./routes/OTT";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/ranking" element={<Ranking />} />
+        <Route path="/ott" element={<OTT />} />
         <Route path="/boxoffice/:period" element={<BoxOffice />} />
       </Routes>
     </div>

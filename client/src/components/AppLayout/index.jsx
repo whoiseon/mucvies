@@ -59,6 +59,12 @@ const AppLayout = ({ children }) => {
                     박스오피스
                   </Link>
                 </li>
+                <li>
+                  <Link to="/ott">
+                    <MovieIcon />
+                    OTT
+                  </Link>
+                </li>
               </ul>
             </LeftMenu>
           )
