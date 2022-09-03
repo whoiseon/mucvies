@@ -93,3 +93,33 @@ export const MenuBottomLine = styled.div`
   background-color: ${WHITE_COLOR};
   opacity: 0.1;
 `;
+
+export const FooterWrapper = styled.div`
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+  p {
+    margin-bottom: 6px;
+    opacity: 0.3;
+    line-height: 24px;
+    transition: opacity 0.2s ease-in;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  p:nth-of-type(2) {
+    margin-top: 20px;
+    width: 160px;
+  }
+  @media (max-width: 700px) {
+    position: absolute;
+    bottom: 0;
+    width: 250px;
+    p {
+      width: 100%;
+    }
+    p:nth-of-type(2) {
+      width: 100%;
+    }
+  }
+`;

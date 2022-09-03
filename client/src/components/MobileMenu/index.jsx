@@ -2,10 +2,12 @@ import {useCallback, useEffect, useRef} from "react";
 import {Link} from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import CloseIcon from '@mui/icons-material/Close';
+import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import PageviewIcon from '@mui/icons-material/Pageview';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MovieIcon from '@mui/icons-material/Movie';
 import {Background, CloseBtn, MenuHeader, MenuWrapper} from "./styles";
+import {FooterWrapper} from "../AppLayout/styles";
 
 const MobileMenu = ({ setShowMobileMenu }) => {
   const onClickCloseMenuArea = useCallback((e) => {
@@ -65,7 +67,17 @@ const MobileMenu = ({ setShowMobileMenu }) => {
               박스오피스
             </Link>
           </li>
+          <li>
+            <Link to="/ott">
+              <SmartDisplayIcon />
+              OTT
+            </Link>
+          </li>
         </ul>
+        <FooterWrapper>
+          <p>All rights reserved. <br /> HWANG IN SEON </p>
+          <p>본 사이트는 포트폴리오용<br /> 목적으로 어떠한 상업적인<br /> 용도로도 사용되지 않습니다.</p>
+        </FooterWrapper>
       </MenuWrapper>
     </Background>
   );

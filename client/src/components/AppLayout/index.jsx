@@ -1,11 +1,21 @@
 import {Link} from "react-router-dom";
 import MovieIcon from '@mui/icons-material/Movie';
 import PageviewIcon from '@mui/icons-material/Pageview';
+import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useMediaQuery} from "react-responsive";
 import {useCallback, useState} from "react";
-import {Background, LeftMenu, MenuBottomLine, MenuBtn, MobileLogo, MobileTopBar, ResultArea} from "./styles";
+import {
+  Background,
+  FooterWrapper,
+  LeftMenu,
+  MenuBottomLine,
+  MenuBtn,
+  MobileLogo,
+  MobileTopBar,
+  ResultArea,
+} from "./styles";
 import MobileMenu from "../MobileMenu";
 
 const AppLayout = ({ children }) => {
@@ -61,11 +71,15 @@ const AppLayout = ({ children }) => {
                 </li>
                 <li>
                   <Link to="/ott">
-                    <MovieIcon />
+                    <SmartDisplayIcon />
                     OTT
                   </Link>
                 </li>
               </ul>
+              <FooterWrapper>
+                <p>All rights reserved. <br /> HWANG IN SEON </p>
+                <p>본 사이트는 포트폴리오용<br /> 목적으로 어떠한 상업적인<br /> 용도로도 사용되지 않습니다.</p>
+              </FooterWrapper>
             </LeftMenu>
           )
       }
