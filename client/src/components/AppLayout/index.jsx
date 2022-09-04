@@ -6,6 +6,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useMediaQuery} from "react-responsive";
 import {useCallback, useState} from "react";
+import logo from '../../asset/logo.svg';
 import {
   Background,
   FooterWrapper,
@@ -37,7 +38,7 @@ const AppLayout = ({ children }) => {
             <MobileTopBar>
               <MobileLogo>
                 <Link to="/">
-                  <h1>Mucvies</h1>
+                  <img src={logo} alt="logo" />
                 </Link>
               </MobileLogo>
               <MenuBtn onClick={onClickShowMobileMenu}>
@@ -48,7 +49,9 @@ const AppLayout = ({ children }) => {
           : (
             <LeftMenu>
               <Link to="/">
-                <h1>Mucvies</h1>
+                <h1>
+                  <img src={logo} alt="logo" />
+                </h1>
               </Link>
               <ul>
                 <li>
