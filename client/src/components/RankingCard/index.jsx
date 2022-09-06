@@ -15,7 +15,7 @@ const RankingCard = ({ data }) => {
   }, []);
 
   return (
-    <CardWrapper>
+    <CardWrapper skeleton={false}>
       <MovieImg
         onMouseEnter={onMouseEnterImage}
         onMouseLeave={onMouseLeaveImage}

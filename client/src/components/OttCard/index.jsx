@@ -3,7 +3,7 @@ import {CardWrapper, MovieExplain, MovieImg, MovieInfo, NoThumbnail, RankWrapper
 
 const OttCard = ({ data }) => {
   return (
-    <CardWrapper>
+    <CardWrapper skeleton={false}>
       <MovieImg>
         {
           data.image

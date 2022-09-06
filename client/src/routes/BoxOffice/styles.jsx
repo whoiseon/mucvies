@@ -5,6 +5,7 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
+  padding: 0 10px;
   margin-bottom: 70px;
   span {
     padding-top: 4px;

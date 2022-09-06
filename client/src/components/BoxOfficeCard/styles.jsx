@@ -19,7 +19,7 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 70px;
-  animation: ${CardShowAnimation} 0.4s ease-in;
+  animation: ${(props) => (props.skeleton ? '' : `${CardShowAnimation} 0.4s ease-in;`)};
   @media (max-width: 1240px) {
     width: 25%;
   }

@@ -41,31 +41,37 @@ const OTT = () => {
       {
         isLoading
           ? (
-            <SkeletonWrapper>
-              <Stack spacing={1}>
-                <OttMovieCard>
-                  {
-                    fakeArrayToSkeleton.map((v, i) => {
-                      return (
-                        <CardWrapper key={v}>
-                          <MovieImg>
-                            <Skeleton variant="rounded" width="100%" height={300} />
-                          </MovieImg>
-                          <MovieInfo>
-                            <p>
-                              <Skeleton variant="rounded" width={100} height={14} />
-                            </p>
-                            <p>
-                              <Skeleton variant="rounded" width="100%" height={14} />
-                            </p>
-                          </MovieInfo>
-                        </CardWrapper>
-                      );
-                    })
-                  }
-                </OttMovieCard>
-              </Stack>
-            </SkeletonWrapper>
+            ott.map((data, i) => {
+              return (
+                <OttSection key={data.movie[i].title}>
+                  <Header>
+                    <Skeleton variant="rounded" width={28} height={28} />
+                    <Skeleton variant="rounded" width={100} height={28} />
+                  </Header>
+                  <OttMovieCard>
+                    {
+                      fakeArrayToSkeleton.map((v, idx) => {
+                        return (
+                          <CardWrapper key={v} skeleton={true}>
+                            <MovieImg>
+                              <Skeleton variant="rounded" width="100%" height={300} />
+                            </MovieImg>
+                            <MovieInfo>
+                              <p>
+                                <Skeleton variant="rounded" width={100} height={14} />
+                              </p>
+                              <p>
+                                <Skeleton variant="rounded" width="100%" height={14} />
+                              </p>
+                            </MovieInfo>
+                          </CardWrapper>
+                        );
+                      })
+                    }
+                  </OttMovieCard>
+                </OttSection>
+              );
+            })
           )
           : (
             ott.map((data, i) => {

@@ -2,12 +2,24 @@ import styled from "@emotion/styled";
 import {keyframes} from "@emotion/css";
 import {BACKGROUND_COLOR, BLUE_COLOR, BUTTON_HOVER, GRAY_COLOR, RED_COLOR, WHITE_COLOR} from "../../styles/common";
 
+const CardShowAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export const CardWrapper = styled.div`
   width: 20%;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
   margin-bottom: 70px;
+  animation: ${(props) => (props.skeleton ? '' : `${CardShowAnimation} 0.4s ease-in;`)};
   @media (max-width: 1240px) {
     width: 25%;
   }
