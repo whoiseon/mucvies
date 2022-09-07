@@ -1,11 +1,24 @@
 import styled from "@emotion/styled";
+import {keyframes} from "@emotion/css";
 import {BLUE_COLOR} from "../../styles/common";
+
+const CardShowAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const CardWrapper = styled.div`
   width: 20%;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
+  animation: ${(props) => (props.skeleton ? '' : `${CardShowAnimation} 0.4s ease-in;`)};
   margin-bottom: 70px;
   @media (max-width: 1400px) {
     width: 25%;

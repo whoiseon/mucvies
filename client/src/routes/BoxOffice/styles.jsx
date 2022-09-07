@@ -34,12 +34,9 @@ export const Header = styled.div`
   }
   @media (max-width: 700px) {
     flex-direction: column;
-    margin-bottom: 70px;
-    span {
-      margin-bottom: 30px;
-    }
+    margin-bottom: 40px;
     div {
-      margin: 0;
+      margin: 30px 0;
       a {
         padding: 14px 24px;
         span {

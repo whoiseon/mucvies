@@ -66,6 +66,10 @@ app.get('/api/search', (req, res) => {
   })
 });
 
+app.get('/api/searchtest', (req, res) => {
+  const searchKeyword = req.query.keyword;
+});
+
 app.get('/api/boxoffice', (req, res) => {
   const period = req.query.period;
 

@@ -50,7 +50,7 @@ const Search = () => {
                           {
                             fakeArrayToSkeleton.map((v, i) => {
                               return (
-                                <CardWrapper key={v}>
+                                <CardWrapper key={v} skeleton={true}>
                                   <MovieImg>
                                     <Skeleton variant="rounded" width="100%" height={260} />
                                   </MovieImg>
