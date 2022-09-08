@@ -1,5 +1,6 @@
 import BlockIcon from '@mui/icons-material/Block';
 import {useCallback, useState} from "react";
+import {Link} from "react-router-dom";
 import {CardWrapper, MovieExplain, MovieImg, MovieInfo, NoThumbnail, RankWrapper} from "./styles";
 
 const BoxOfficeCard = ({ data }) => {
@@ -38,19 +39,23 @@ const BoxOfficeCard = ({ data }) => {
         </RankWrapper>
         {
           showMovieInfo && (
-            <MovieExplain>
-              <p>
-                {
-                  data.info
-                }
-              </p>
-            </MovieExplain>
+            <Link to={`/movie/${data.code}`}>
+              <MovieExplain>
+                <p>
+                  {
+                    data.info
+                  }
+                </p>
+              </MovieExplain>
+            </Link>
           )
         }
       </MovieImg>
       <MovieInfo>
         <p>{ sliceAttendance }</p>
-        <p>{ data.title }</p>
+        <Link to={`/movie/${data.code}`}>
+          { data.title }
+        </Link>
       </MovieInfo>
     </CardWrapper>
   );

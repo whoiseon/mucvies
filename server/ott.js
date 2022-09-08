@@ -40,6 +40,8 @@ const parsing = async () => {
       const title = $(n).find('.item_poster .thumb_cont .tit_item a').text();
       const image = $(n).find('.item_poster .thumb_item .poster_movie img').attr('src');
       const rank = $(n).find('.item_poster .thumb_item .poster_movie .rank_num').text();
+      const link = $(n).find('.item_poster > a').attr('href');
+      const code = link.replace(/[^0-9]/g, "");
 
       if (title === "") {
         return;
@@ -49,6 +51,7 @@ const parsing = async () => {
         title,
         image,
         rank,
+        code,
       })
     });
   });

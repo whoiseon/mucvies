@@ -40,6 +40,17 @@ export const MovieImg = styled.div`
     border-radius: 14px;
     object-fit: cover;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.03);
+      -o-transform:scale(1.03);
+      -moz-transform:scale(1.03);
+      -webkit-transform:scale(1.03);
+      transition: transform .35s;
+      -o-transition: transform .35s;
+      -moz-transition: transform .35s;
+      -webkit-transition: transform .35s;
+    }
     @media (max-width: 1240px) {
       height: 300px;
     }
@@ -53,11 +64,15 @@ export const MovieImg = styled.div`
 `;
 
 export const MovieInfo = styled.div`
-  p {
+  a {
     text-align: left;
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
     i {
       font-style: normal;
       color: ${WHITE_COLOR};

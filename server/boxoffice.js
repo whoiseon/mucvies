@@ -23,6 +23,8 @@ const parsing = async (period) => {
     const title = $(node).find('.thumb_cont strong a').text();
     const attendance = $(node).find('.txt_info .info_txt:nth-child(2)').text();
     const rank = $(node).find('.poster_movie .rank_num').text();
+    const link = $(node).find('.poster_info a').attr('href');
+    const code = link.replace(/[^0-9]/g, "");
 
     if (title === "") {
       return;
@@ -34,6 +36,7 @@ const parsing = async (period) => {
       title,
       attendance,
       rank,
+      code,
     });
   });
 

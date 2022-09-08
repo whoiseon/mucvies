@@ -25,6 +25,9 @@ const parsing = async () => {
     const num = $(node).find('.thumb_cont .txt_append .info_txt .txt_num').text();
     const release = $(node).find('.thumb_cont .txt_info .txt_num').text();
     const rank = $(node).find('.poster_movie .rank_num').text();
+    const link = $(node).find('.poster_info a').attr('href');
+    const code = link.replace(/[^0-9]/g, "");
+
 
     if (title === "") {
       return;
@@ -38,6 +41,7 @@ const parsing = async () => {
       num,
       release,
       rank,
+      code,
     });
   });
 

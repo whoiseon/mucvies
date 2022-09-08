@@ -50,6 +50,9 @@ export const MovieImg = styled.div`
       height: 280px;
     }
   }
+  a {
+    display: block;
+  }
 `;
 
 export const MovieInfo = styled.div`
@@ -68,10 +71,13 @@ export const MovieInfo = styled.div`
     margin-bottom: 10px;
     color: ${GRAY_COLOR};
   }
-  p:nth-of-type(2) {
+  a {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 0;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
