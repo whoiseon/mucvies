@@ -6,6 +6,7 @@ require("dotenv").config();
 const cors = require("cors");
 
 // parsing
+const movie = require('./movie');
 const boxoffice = require('./boxoffice.js');
 const ranking = require('./ranking');
 const ott = require('./ott');
@@ -66,8 +67,13 @@ app.get('/api/search', (req, res) => {
   })
 });
 
-app.get('/api/searchtest', (req, res) => {
-  const searchKeyword = req.query.keyword;
+app.get('/api/movie', (req, res) => {
+  const movieCode = req.query.movieCode;
+
+  movie(movieCode)
+    .then((response) => {
+      res.json(response);
+    });
 });
 
 app.get('/api/boxoffice', (req, res) => {
