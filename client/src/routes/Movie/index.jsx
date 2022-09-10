@@ -31,9 +31,13 @@ const Movie = () => {
 
   return (
     <AppLayout>
-      {
-        movieData.title
-      }
+      <img src={movieData.image} alt="movie_poster" width="200px" />
+      <p>
+        { movieData.title }
+      </p>
+      <p>
+        { movieData.subTitle }
+      </p>
     </AppLayout>
   );
 };
