@@ -38,6 +38,27 @@ const Movie = () => {
       <p>
         { movieData.subTitle }
       </p>
+      <p>
+        개봉일: { movieData.release }
+      </p>
+      <p>
+        장르: { movieData.genre }
+      </p>
+      <p>
+        국가: { movieData.country }
+      </p>
+      <p>
+        등급: { movieData.rank }
+      </p>
+      <p>
+        상영 시간: { movieData.runningTime }
+      </p>
+      <p>
+        평점: { movieData.평점 }
+      </p>
+      <p>
+        관객수: { movieData.attendance }
+      </p>
     </AppLayout>
   );
 };
