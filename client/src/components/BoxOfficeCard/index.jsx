@@ -39,7 +39,7 @@ const BoxOfficeCard = ({ data }) => {
         </RankWrapper>
         {
           showMovieInfo && (
-            <Link to={`/movie/${data.code}`}>
+            <Link to={`/movie/${data.code}`} state={{ summary: data.info }}>
               <MovieExplain>
                 <p>
                   {
@@ -53,7 +53,7 @@ const BoxOfficeCard = ({ data }) => {
       </MovieImg>
       <MovieInfo>
         <p>{ sliceAttendance }</p>
-        <Link to={`/movie/${data.code}`}>
+        <Link to={`/movie/${data.code}`} state={{ summary: data.info }}>
           { data.title }
         </Link>
       </MovieInfo>

@@ -20,7 +20,6 @@ import MobileMenu from "../MobileMenu";
 
 const AppLayout = ({ children }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
   const isMobile = useMediaQuery({
     query: "(max-width: 700px)",
   });

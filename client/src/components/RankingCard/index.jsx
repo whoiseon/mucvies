@@ -39,7 +39,7 @@ const RankingCard = ({ data }) => {
         </RankWrapper>
         {
           showMovieInfo && (
-            <Link to={`/movie/${data.code}`}>
+            <Link to={`/movie/${data.code}`} state={{ summary: data.info }}>
               <MovieExplain>
                 <p>
                   {
@@ -53,7 +53,7 @@ const RankingCard = ({ data }) => {
       </MovieImg>
       <MovieInfo>
         <p>평점 <i>{data.grade}</i> 예매율 <i>{data.num}</i></p>
-        <Link to={`/movie/${data.code}`}>
+        <Link to={`/movie/${data.code}`} state={{ summary: data.info }}>
           { data.title }
         </Link>
         <p style={{ fontSize: '14px', color: GRAY_COLOR, marginTop: '10px' }}>개봉일 {data.release}</p>
