@@ -13,8 +13,8 @@ const ErrorBubbleAnimation = keyframes`
 
 export const Bubble = styled.div`
   position: absolute;
-  top: -50px;
-  left: 60px;
+  top: -34px;
+  left: 10px;
   animation: ${ErrorBubbleAnimation} 0.4s ease-in;
 `;
 
@@ -26,9 +26,10 @@ export const BubbleWrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 14px 20px;
+  padding: 12px 16px;
   border-radius: 14px;
   background-color: ${RED_COLOR};
+  z-index: 999;
 `;
 
 export const Triangle = styled.div`

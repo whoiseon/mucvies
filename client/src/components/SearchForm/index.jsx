@@ -15,7 +15,7 @@ import OptionButton from "../OptionButton";
 import {genreListState, countryListState, genreState, countryState} from "../../states/optionListState";
 import ErrorBubble from "../ErrorBubble";
 
-const SearchForm = ({ setMovies, setKeyword, setIsLoading }) => {
+const SearchForm = ({ setMovies, setKeyword, setIsLoading, setDefaultView }) => {
   const genreList = useRecoilValue(genreListState);
   const countryList = useRecoilValue(countryListState);
 
@@ -46,6 +46,7 @@ const SearchForm = ({ setMovies, setKeyword, setIsLoading }) => {
       if (value === '') {
         setMovies([]);
         setValue('');
+        setIsLoading(false);
         setErrorBubble(true);
         setTimeout(() => {
           setErrorBubble(false);
@@ -58,6 +59,7 @@ const SearchForm = ({ setMovies, setKeyword, setIsLoading }) => {
             country,
           },
         });
+        setDefaultView(false);
         setIsLoading(false);
         setKeyword(value);
         setMovies(data);

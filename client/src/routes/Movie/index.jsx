@@ -4,6 +4,7 @@ import axios from "axios";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Stack from "@mui/material/Stack";
 import Skeleton from "@mui/material/Skeleton";
+import {useMediaQuery} from "react-responsive";
 import AppLayout from "../../components/AppLayout";
 import {Content, ContentWrapper, Header, MovieInfo, MovieSummary, MovieTitle} from "./styles";
 import {BoxOfficeMovieCard, SkeletonWrapper} from "../BoxOffice/styles";
@@ -16,6 +17,10 @@ const Movie = () => {
   const { summary } = location.state || '';
   const [movieData, setMovieData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const isMobile = useMediaQuery({
+    query: "(max-width: 700px)",
+  });
 
   const onClickBackButton = () => {
     navigate(-1);
@@ -54,7 +59,52 @@ const Movie = () => {
       </Header>
       {
         isLoading
-          ? '로딩중'
+          ? (
+            <SkeletonWrapper>
+              <Stack spacing={1}>
+                <ContentWrapper>
+                  <Content>
+                    <div>
+                      <Skeleton variant="rounded" width="100%" height={isMobile ? 500 : 320} />
+                    </div>
+                    <div>
+                      <MovieTitle>
+                        <Skeleton variant="rounded" width={isMobile ? '50%' : 260} height={22} />
+                        <Skeleton variant="rounded" width={isMobile ? '100%' : 520} height={18} />
+                      </MovieTitle>
+                      <MovieInfo>
+                        <div>
+                          <Skeleton variant="rounded" width={isMobile ? '50%' : 260} height={18} />
+                        </div>
+                        <div>
+                          <Skeleton variant="rounded" width={isMobile ? '50%' : 260} height={18} />
+                        </div>
+                        <div>
+                          <Skeleton variant="rounded" width={isMobile ? '50%' : 260} height={18} />
+                        </div>
+                        <div>
+                          <Skeleton variant="rounded" width={isMobile ? '50%' : 260} height={18} />
+                        </div>
+                        <div>
+                          <Skeleton variant="rounded" width={isMobile ? '50%' : 260} height={18} />
+                        </div>
+                      </MovieInfo>
+                    </div>
+                  </Content>
+                  <MovieSummary>
+                    <p>
+                      <Skeleton variant="rounded" width="30%" height={18} />
+                    </p>
+                    <p>
+                      <Skeleton variant="rounded" width="100%" height={18} />
+                      <Skeleton variant="rounded" width="100%" height={18} />
+                      <Skeleton variant="rounded" width="100%" height={18} />
+                    </p>
+                  </MovieSummary>
+                </ContentWrapper>
+              </Stack>
+            </SkeletonWrapper>
+          )
           : (
             <ContentWrapper>
               <Content>
@@ -68,32 +118,32 @@ const Movie = () => {
                   </MovieTitle>
                   <MovieInfo>
                     <div>
-                      개봉일
-                      <span>{ movieData.release }</span>
+                      <span>개봉일</span>
+                      { movieData.release }
                     </div>
                     <div>
-                      장르
-                      <span>{ movieData.genre }</span>
+                      <span>장르</span>
+                      { movieData.genre }
                     </div>
                     <div>
-                      국가
-                      <span>{ movieData.country }</span>
+                      <span>국가</span>
+                      { movieData.country }
                     </div>
                     <div>
-                      등급
-                      <span>{ movieData.rank }</span>
+                      <span>등급</span>
+                      { movieData.rank }
                     </div>
                     <div>
-                      러닝타임
-                      <span>{ movieData.runningTime }</span>
+                      <span>러닝타임</span>
+                      { movieData.runningTime }
                     </div>
                     <div>
-                      평점
-                      <span>{ movieData.rating }</span>
+                      <span>러닝타임</span>
+                      { movieData.rating }
                     </div>
                     <div>
-                      관객수
-                      <span>{ movieData.attendance || '0명' }</span>
+                      <span>관객수</span>
+                      { movieData.attendance || '0명' }
                     </div>
                   </MovieInfo>
                 </div>
