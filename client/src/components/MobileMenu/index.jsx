@@ -44,31 +44,31 @@ const MobileMenu = ({ setShowMobileMenu }) => {
         </MenuHeader>
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/" onClick={onClickCloseMenu}>
               <HomeIcon />
               홈
             </Link>
           </li>
           <li>
-            <Link to="/search">
+            <Link to="/search" onClick={onClickCloseMenu}>
               <PageviewIcon />
               영화 검색
             </Link>
           </li>
           <li>
-            <Link to="/ranking">
+            <Link to="/ranking" onClick={onClickCloseMenu}>
               <EmojiEventsIcon />
               예매 순위
             </Link>
           </li>
           <li>
-            <Link to="/boxoffice/weekly">
+            <Link to="/boxoffice/weekly" onClick={onClickCloseMenu}>
               <MovieIcon />
               박스오피스
             </Link>
           </li>
           <li>
-            <Link to="/ott">
+            <Link to="/ott" onClick={onClickCloseMenu}>
               <SmartDisplayIcon />
               OTT
             </Link>
