@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <AppLayout>
-      홈
+      로딩중
     </AppLayout>
   );
 };
