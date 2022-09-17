@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import MovieIcon from '@mui/icons-material/Movie';
 import PageviewIcon from '@mui/icons-material/Pageview';
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
@@ -17,6 +17,7 @@ import {
   ResultArea,
 } from "./styles";
 import MobileMenu from "../MobileMenu";
+import {BLUE_COLOR, BUTTON_HOVER, WHITE_COLOR} from "../../styles/common";
 
 const AppLayout = ({ children }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -27,6 +28,11 @@ const AppLayout = ({ children }) => {
   const onClickShowMobileMenu = useCallback(() => {
     setShowMobileMenu((prev) => !prev);
   }, []);
+
+  const activeButton = {
+    backgroundColor: `${BUTTON_HOVER}`,
+    color: `${WHITE_COLOR}`,
+  };
 
   return (
     <Background>
@@ -51,28 +57,40 @@ const AppLayout = ({ children }) => {
               </Link>
               <ul>
                 <li>
-                  <Link to="/search">
+                  <NavLink
+                    to="/search"
+                    style={({ isActive }) => (isActive ? activeButton : {})}
+                  >
                     <PageviewIcon />
                     영화 검색
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/ranking">
+                  <NavLink
+                    to="/ranking"
+                    style={({ isActive }) => (isActive ? activeButton : {})}
+                  >
                     <EmojiEventsIcon />
                     예매 순위
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/boxoffice/weekly">
+                  <NavLink
+                    to="/boxoffice/weekly"
+                    style={({ isActive }) => (isActive ? activeButton : {})}
+                  >
                     <MovieIcon />
                     박스오피스
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/ott">
+                  <NavLink
+                    to="/ott"
+                    style={({ isActive }) => (isActive ? activeButton : {})}
+                  >
                     <SmartDisplayIcon />
                     OTT
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
               <FooterWrapper>

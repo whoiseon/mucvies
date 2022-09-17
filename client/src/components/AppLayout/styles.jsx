@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {BACKGROUND_COLOR, BUTTON_HOVER, WHITE_COLOR} from "../../styles/common";
+import {BACKGROUND_COLOR, BUTTON_HOVER, GRAY_COLOR, WHITE_COLOR} from "../../styles/common";
 
 export const Background = styled.div`
   @media (max-width: 700px) {
@@ -32,14 +32,14 @@ export const LeftMenu = styled.div`
         align-items: center;
         padding: 20px;
         width: 100%;
-        opacity: 0.5;
-        transition: background-color, opacity 0.16s ease-in;
+        color: ${GRAY_COLOR};
+        transition: color, background-color 0.16s ease-in;
         svg {
           margin-right: 14px;
         }
         &:hover {
           background-color: ${BUTTON_HOVER};
-          opacity: 1;
+          color: ${WHITE_COLOR};
         }
         &:active {
           background-color: #404040;
