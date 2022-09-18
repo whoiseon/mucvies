@@ -9,7 +9,7 @@ import {BoxOfficeMovieCard, BoxOfficeWrapper, Header, SkeletonWrapper} from "./s
 import {boxofficeState} from "../../states/boxofficeState";
 import BoxOfficeCard from "../../components/BoxOfficeCard";
 import {CardWrapper, MovieImg, MovieInfo} from "../../components/BoxOfficeCard/styles";
-import {BLUE_COLOR, WHITE_COLOR} from "../../styles/common";
+import {BLUE_COLOR, BUTTON_HOVER, WHITE_COLOR} from "../../styles/common";
 
 const BoxOffice = () => {
   const [boxoffice, setBoxoffice] = useRecoilState(boxofficeState);
@@ -40,7 +40,7 @@ const BoxOffice = () => {
   const fakeArrayToSkeleton = Array.from({ length: 15 }, (v, i) => i);
 
   const activeButton = {
-    backgroundColor: `${BLUE_COLOR}`,
+    backgroundColor: `${BUTTON_HOVER}`,
     color: `${WHITE_COLOR}`,
   };
 

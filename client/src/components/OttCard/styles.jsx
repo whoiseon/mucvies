@@ -120,12 +120,11 @@ export const RankWrapper = styled.div`
   border: 4px solid ${BACKGROUND_COLOR};
   top: -12px;
   left: -12px;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   z-index: 999;
-  background-color: ${RED_COLOR};
+  background-color: ${BLUE_COLOR};
   p {
-    padding-bottom: 2px;
     font-size: 14px;
     font-weight: bold;
   }

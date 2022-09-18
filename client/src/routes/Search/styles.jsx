@@ -20,7 +20,6 @@ export const SearchFormWrapper = styled.form`
 export const Header = styled.p`
   font-size: 22px;
   font-weight: bold;
-  opacity: 0.5;
   padding-top: 6px;
   margin-bottom: 70px;
   @media (max-width: 700px) {
