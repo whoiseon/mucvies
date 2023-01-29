@@ -88,7 +88,7 @@ const Search = () => {
                     {
                       movies?.map((item, idx) => {
                         return (
-                          <MovieCard key={item.title} item={item} />
+                          <MovieCard key={item.title + idx} item={item} />
                         );
                       })
                     }

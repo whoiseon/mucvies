@@ -123,7 +123,7 @@ export const RankWrapper = styled.div`
   left: -12px;
   width: 34px;
   height: 34px;
-  z-index: 999;
+  z-index: 99;
   background-color: ${BLUE_COLOR};
   p {
     font-size: 14px;

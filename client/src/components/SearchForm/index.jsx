@@ -2,7 +2,6 @@ import {memo, useState, useCallback, useEffect} from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 import {useRecoilState, useRecoilValue} from "recoil";
-import {useQuery} from "react-query";
 import {
   Header,
   InputWrapper,
