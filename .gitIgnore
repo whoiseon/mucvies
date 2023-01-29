@@ -13,4 +13,4 @@ node_modules/
 .gitIgnore
 
 # Aws
-*.pem
+whois_aws_keypair_15261809.pem

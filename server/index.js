@@ -37,6 +37,11 @@ app.use(cors(corsOptions));
 const CLIENT_ID = process.env.NAVER_CLIENT_ID;
 const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
 
+
+app.get('/', (req, res) => {
+  res.send('Mucvies server success');
+})
+
 // API 데이터 가져오기
 app.get('/api/search', (req, res) => {
   // 클라이언트에서 보낸 검색어
