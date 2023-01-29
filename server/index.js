@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3065;
 const path = require("path");
+const morgan = require('morgan');
+const hpp = require('hpp');
+const helmet = require('helmet');
 require("dotenv").config();
 const cors = require("cors");
 
@@ -17,18 +20,21 @@ const axios = require("axios");
 // deploy mode
 const isMode = 'development';
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(morgan('combined'));
+  app.use(hpp());
+  app.use(helmet());
+} else {
+  app.use(morgan('dev'));
+}
+
 // body-parser
 app.use(express.json());
 app.use(express.urlencoded( {extended : true } ));
 
 // CORS 허용
 let corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    'https://openapi.naver.com',
-    'https://movie.daum.net',
-    'https://mucvies.herokuapp.com'
-  ],
+  origin: '*',
   credentials: true
 }
 app.use(cors(corsOptions));
@@ -113,6 +119,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Server
-app.listen(port, () => {
+app.listen(80, () => {
   console.log(`server start ${port}`);
 })
