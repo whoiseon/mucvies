@@ -43,6 +43,7 @@ app.use(cors(corsOptions));
 const CLIENT_ID = process.env.NAVER_CLIENT_ID;
 const CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
 
+console.log(CLIENT_ID, CLIENT_SECRET);
 
 app.get('/', (req, res) => {
   res.send('Mucvies server success');
@@ -54,7 +55,6 @@ app.get('/api/search', (req, res) => {
   const searchKeyword = req.query.query;
   const searchGenre = req.query.genre;
   const searchCountry = req.query.country;
-
   axios.get('https://openapi.naver.com/v1/search/movie.json',
     {
       params: {

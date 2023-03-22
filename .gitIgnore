@@ -1,6 +1,7 @@
 # Root
 .idea/
 .DS_STORE/
+server/.env
 
 # Client
 client/node_modules
@@ -8,9 +9,7 @@ client/src/setupProxy.js
 client/build
 
 # Server
-node_modules/
-.env
-.gitIgnore
+server/node_modules/
 
 # Aws
 whois_aws_keypair_15261809.pem
